@@ -1,2 +1,2 @@
 # platzigram
-Development whith DJangoof an application like Instagram
+Development with DJango of an application like Instagram
