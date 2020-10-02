@@ -1,9 +1,17 @@
+"""Platzigram URLs module"""
 from django.urls import path
-from django.http import HttpResponse
 
-def hello_world(request):
-    return HttpResponse('Hello, world!')
+# Views into the configuration module
+from platzigram import views as local_views
+
+# Views from apps
+from posts import views as posts_views
+
 
 urlpatterns = [
-    path('hello-word', hello_world ),
+    path('hello-word/', local_views.hello_world),
+    path('sorted/', local_views.sort_integers),
+    path('hi/<str:name>/<int:age>/', local_views.say_hi),
+
+    path('posts/', posts_views.list_posts)
 ]

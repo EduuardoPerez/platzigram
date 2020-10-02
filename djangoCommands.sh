@@ -23,5 +23,5 @@ case $COMMAND in
 	"mkmigrations")
 		py manage.py makemigrations;;
 	*)
-		echo "The command is not supported";;
+		echo "Command not supported. Posible arg: env run migrate mkmigrations";;
 esac
