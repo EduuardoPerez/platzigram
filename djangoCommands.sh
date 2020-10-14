@@ -7,7 +7,7 @@
 
 if [ -z $1 ]
 then
-  echo "Type an argument. Posible arg: env run migrate mkmigrations"
+  echo "Type an argument. Posible arg: env run migrate mkmigrations sh superuser"
 fi
 
 COMMAND=${1}
@@ -22,6 +22,10 @@ case $COMMAND in
 		py manage.py migrate;;
 	"mkmigrations")
 		py manage.py makemigrations;;
+	"sh")
+		py manage.py shell;;
+	"superuser")
+		python manage.py createsuperuser;;
 	*)
 		echo "Command not supported. Posible arg: env run migrate mkmigrations";;
 esac
