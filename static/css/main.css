@@ -16,6 +16,10 @@ html, body {
     border-bottom: 1px solid rgba(0,0,0,.0975);
 }
 
+#main-container {
+    margin-top: 5rem!important;
+}
+
 .post-container {
     background: #fff;
     border: 1px solid #e6e6e6;
