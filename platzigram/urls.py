@@ -14,6 +14,9 @@ from posts import views as posts_views
 from users import views as users_views
 
 
+# The name in the urls path is for use it in the templates, with this name if yo need to change
+# a url you can do it without to change the url in every part of the code, because you use the
+# url name instead of the path
 urlpatterns = [
 
     path('admin/', admin.site.urls),
@@ -25,5 +28,6 @@ urlpatterns = [
     path('posts/', posts_views.list_posts, name='feed'),
 
     path('users/login/', users_views.login_view, name='login'),
+    path('users/logout/', users_views.logout_view, name='logout'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # For use just in development and serve the media

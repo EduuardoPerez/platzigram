@@ -1,12 +1,13 @@
 """Users views."""
 
 # Django
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 
 def login_view(request):
-    """Login view."""
+    """Login view"""
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -18,3 +19,10 @@ def login_view(request):
             return render(request, 'users/login.html', {'error': 'Invalid username and password'})
 
     return render(request, 'users/login.html')
+
+
+@login_required
+def logout_view(request):
+    """Logout view"""
+    logout(request)
+    return redirect('login')
