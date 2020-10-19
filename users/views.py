@@ -53,6 +53,10 @@ def login_view(request):
         else:
             return render(request, 'users/login.html', {'error': 'Invalid username and password'})
 
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return redirect('feed')
+
     return render(request, 'users/login.html')
 
 
